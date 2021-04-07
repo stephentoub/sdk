@@ -25,7 +25,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
 
         public MvcBuildIntegrationTestLegacy(ITestOutputHelper log) : base(log) { }
 
-        [CoreMSBuildOnlyFact]
+        [CoreMSBuildOnlyFact(Skip = "tmp")]
         public virtual void Building_Project()
         {
             var testAsset = $"Razor{TestProjectName}";
@@ -51,7 +51,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 @"""Name"":""SimpleMvc.SimpleTagHelper""");
         }
 
-        [CoreMSBuildOnlyFact]
+        [CoreMSBuildOnlyFact(Skip = "tmp")]
         public virtual void BuildingProject_CopyToOutputDirectoryFiles()
         {
             var testAsset = $"Razor{TestProjectName}";
@@ -71,7 +71,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
 
         }
 
-        [CoreMSBuildOnlyFact]
+        [CoreMSBuildOnlyFact(Skip = "tmp")]
         public virtual void Publish_Project()
         {
             var testAsset = $"Razor{TestProjectName}";
@@ -93,7 +93,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
 
         }
 
-        [CoreMSBuildOnlyFact]
+        [CoreMSBuildOnlyFact(Skip = "tmp")]
         public virtual void Publish_IncludesRefAssemblies_WhenCopyRefAssembliesToPublishDirectoryIsSet()
         {
             var testAsset = $"Razor{TestProjectName}";

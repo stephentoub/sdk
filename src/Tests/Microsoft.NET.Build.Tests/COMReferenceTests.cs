@@ -68,7 +68,7 @@ namespace Microsoft.NET.Build.Tests
             runCommand.Execute().Should().Pass();
         }
 
-        [FullMSBuildOnlyFact]
+        [FullMSBuildOnlyFact(Skip = "tmp")]
         public void COMReferenceProperlyPublish()
         {
             var targetFramework = "netcoreapp3.0";

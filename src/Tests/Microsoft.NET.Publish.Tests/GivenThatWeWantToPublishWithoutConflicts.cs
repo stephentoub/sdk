@@ -19,7 +19,7 @@ namespace Microsoft.NET.Publish.Tests
         {
         }
 
-        [WindowsOnlyFact]
+        [WindowsOnlyFact(Skip = "tmp")]
         public void It_solves_conflicts_between_package_and_implicit_references()
         {
             // Test case from https://github.com/dotnet/sdk/issues/3904.
@@ -54,7 +54,7 @@ namespace Microsoft.NET.Publish.Tests
             files.FirstOrDefault().Contains(@"system.runtime.interopservices.runtimeinformation\4.3.0").Should().BeTrue();
         }
 
-        [Theory]
+        [Theory(Skip = "tmp")]
         [InlineData(true)]
         [InlineData(false)]
         public void It_has_consistent_behavior_when_publishing_single_file(bool shouldPublishSingleFile)

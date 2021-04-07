@@ -22,7 +22,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [WindowsOnlyTheory]
+        [WindowsOnlyTheory(Skip = "tmp")]
         [InlineData("UseWPF")]
         [InlineData("UseWindowsForms")]
         public void It_builds_on_windows_with_the_windows_desktop_sdk(string uiFrameworkProperty)
@@ -58,7 +58,7 @@ namespace Microsoft.NET.Build.Tests
                 .HaveStdOutContaining(Strings.WindowsDesktopFrameworkRequiresWindows);
         }
 
-        [WindowsOnlyTheory]
+        [WindowsOnlyTheory(Skip = "tmp")]
         [InlineData("Microsoft.WindowsDesktop.App")]
         [InlineData("Microsoft.WindowsDesktop.App.WindowsForms")]
         [InlineData("Microsoft.WindowsDesktop.App.WPF")]
@@ -96,7 +96,7 @@ namespace Microsoft.NET.Build.Tests
                 .HaveStdOutContaining(Strings.WindowsDesktopFrameworkRequiresWindows);
         }
 
-        [WindowsOnlyTheory]
+        [WindowsOnlyTheory(Skip = "tmp")]
         [InlineData("net5.0", "TargetPlatformIdentifier", "Windows", "Exe")]
         [InlineData("netcoreapp3.1", "UseWindowsForms", "true", "WinExe")]
         [InlineData("netcoreapp3.1", "UseWPF", "true", "WinExe")]

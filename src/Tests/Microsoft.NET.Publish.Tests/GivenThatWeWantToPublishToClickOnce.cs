@@ -23,7 +23,7 @@ namespace Microsoft.NET.Publish.Tests
         {
         }
 
-        [FullMSBuildOnlyTheory]
+        [FullMSBuildOnlyTheory(Skip = "tmp")]
         [InlineData(false)]
         [InlineData(true)]
         public void It_publishes_with_a_publish_profile(bool? publishSingleFile)

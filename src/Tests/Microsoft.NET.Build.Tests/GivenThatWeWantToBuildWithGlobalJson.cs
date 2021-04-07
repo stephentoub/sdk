@@ -18,7 +18,7 @@ namespace Microsoft.NET.Build.Tests
         public GivenThatWeWantToBuildWithGlobalJson(ITestOutputHelper log) : base(log)
         {}
 
-        [FullMSBuildOnlyTheory]
+        [FullMSBuildOnlyTheory(Skip = "tmp")]
         [InlineData(true)]
         [InlineData(false)]
         public void It_fails_build_on_failed_sdk_resolution(bool runningInVS)

@@ -17,13 +17,13 @@ namespace Microsoft.NET.Sdk.Razor.Tests
     {
         public BuildWithComponentsIntegrationTest(ITestOutputHelper log) : base(log) {}
 
-        [CoreMSBuildOnlyFact]
+        [CoreMSBuildOnlyFact(Skip = "tmp")]
         public void Build_Components_WithDotNetCoreMSBuild_Works() => Build_ComponentsWorks();
 
-        [FullMSBuildOnlyFact]
+        [FullMSBuildOnlyFact(Skip = "tmp")]
         public void Build_Components_WithDesktopMSBuild_Works() => Build_ComponentsWorks();
 
-        [Fact]
+        [Fact(Skip = "tmp")]
         public void Building_NetstandardComponentLibrary()
         {
             var testAsset = "RazorComponentLibrary";

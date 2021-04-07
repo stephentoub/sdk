@@ -18,7 +18,7 @@ namespace Microsoft.DotNet.ShellShim.Tests
 {
     public class LinuxEnvironmentPathTests
     {
-        [UnixOnlyFact]
+        [UnixOnlyFact(Skip = "tmp")]
         public void GivenPathNotSetItPrintsManualInstructions()
         {
             var reporter = new BufferedReporter();
@@ -44,7 +44,7 @@ namespace Microsoft.DotNet.ShellShim.Tests
                     toolsPath.Path));
         }
 
-        [UnixOnlyFact]
+        [UnixOnlyFact(Skip = "tmp")]
         public void GivenPathNotSetAndProfileExistsItPrintsLogoutMessage()
         {
             var reporter = new BufferedReporter();
@@ -70,7 +70,7 @@ namespace Microsoft.DotNet.ShellShim.Tests
             reporter.Lines.Should().Equal(CommonLocalizableStrings.EnvironmentPathLinuxNeedLogout);
         }
 
-        [UnixOnlyTheory]
+        [UnixOnlyTheory(Skip = "tmp")]
         [InlineData("/home/user/.dotnet/tools")]
         [InlineData("~/.dotnet/tools")]
         public void GivenPathSetItPrintsNothing(string toolsDirectoryOnPath)
@@ -95,7 +95,7 @@ namespace Microsoft.DotNet.ShellShim.Tests
             reporter.Lines.Should().BeEmpty();
         }
 
-        [UnixOnlyFact]
+        [UnixOnlyFact(Skip = "tmp")]
         public void GivenPathSetItDoesNotAddPathToEnvironment()
         {
             var reporter = new BufferedReporter();
@@ -124,7 +124,7 @@ namespace Microsoft.DotNet.ShellShim.Tests
                 .Be(false);
         }
 
-        [UnixOnlyFact]
+        [UnixOnlyFact(Skip = "tmp")]
         public void GivenPathNotSetItAddsToEnvironment()
         {
             var reporter = new BufferedReporter();
